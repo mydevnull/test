@@ -4,6 +4,7 @@
 
 // ssh birdie hi
 // ssh birdie again
+class Bearee; // forward declare Bearee
 
 class Birdie
 {
