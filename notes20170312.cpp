@@ -1,4 +1,6 @@
-HEAP
+
+: stackobj( 1, "blah" )
+, p (NULL)HEAP
   ________________________________________________________________
   |    |  40    |                                                |
   ----------------------------------------------------------------
@@ -45,6 +47,8 @@ class Container
    Birdie stackobj;  // DEFINITELY doesn't need a destructor
    Birdie * p; 			 // if you OWN this pointer (i.e. allocating it), be sure to clean it up in the constructor
    Container()
+     : stackobj( 1, "blah" )
+     , p (NULL)
    {
       p = new Birdie();
    }
