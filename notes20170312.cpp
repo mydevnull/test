@@ -31,6 +31,7 @@ Stack of func():
 | mybirdie(20)|
 | birdie2(20) |
 | b (4) ----^ | pointer (b = &mybirdie)
+| c (4) --    |
 _________|____|
          |
          --------->_______________ (b = new Birdie())
