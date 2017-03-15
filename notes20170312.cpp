@@ -12,6 +12,7 @@ const Birdie * const b4; // both const
 void func()
 {
   Birdie mybirdie;
+  Birdie birdie2( 1, 2, "asdasd" );
   Birdie * b;
 
   b = &mybirdie;		// b points to the stack object
@@ -25,6 +26,7 @@ Stack of func():
 |-------------|
 | func (4)    | pointer
 | mybirdie(20)|
+| birdie2(20) |
 | b (4) ----^ | pointer (b = &mybirdie)
 _________|____|
          |
