@@ -44,8 +44,8 @@ b2 = new Birdie();
 
 class Container
 {
-   Birdie stackobj;  // DEFINITELY doesn't need a destructor
-   Birdie * p; 			 // if you OWN this pointer (i.e. allocating it), be sure to clean it up in the destructor
+   Birdie stackobj;  // it will be destroyed automatically once container leaves the scope
+   Birdie * p;       // if you OWN this pointer (i.e. allocating it), be sure to clean it up in the destructor
    Container()
      : stackobj( 1, "blah" )
      , p (NULL)
