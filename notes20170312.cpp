@@ -58,7 +58,7 @@ class Container
      { 
        delete p;	// if you declare a destructor, delete the pointer p
      }
-   }
+   }   // destructor called for stackobj
 }
 
 
