@@ -17,7 +17,10 @@ void func()
 
   b = &mybirdie;		// b points to the stack object
   b = new Birdie(); // b points to a heap object (new Birdie() returns a pointer)
+  Birdie * c = b;
+  c->sayHoot();   // ok
   delete b;
+  c->sayHoot();   // seg fault
 
 } // destructor called on mybirdie object
   // b pointer will be gone but destructor not called
