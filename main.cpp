@@ -11,11 +11,20 @@ class Birdie
 private:
 
     // member variables
-    const int         m_identifier;
+    const int       m_identifier;
     std::string     m_name;
 
 public:
 
+    // defauilt constructor
+    Birdie()
+      : m_identifier ( 0 )
+      , m_name       ()
+    {
+        std::cout << m_name << " :: " << m_identifier << ": entered default constructor!" << std::endl;
+    }
+
+    
     // constructor
     Birdie( const int identifier, const std::string& name ) // const arguments will not be modified
       : m_identifier ( identifier )
