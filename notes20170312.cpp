@@ -56,3 +56,9 @@ class Container
      }
    }
 }
+
+
+void f2()
+{
+     Container c();
+}   // destructor for container called
