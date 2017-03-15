@@ -21,8 +21,8 @@ void func()
   c->sayHoot();   // ok
   delete b;
   c->sayHoot();   // seg fault
-
-} // destructor called on mybirdie object
+  
+} // destructor called on mybirdie & birdie2 object
   // b pointer will be gone but destructor not called
 
 Stack of func():
