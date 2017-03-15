@@ -43,7 +43,7 @@ b2 = new Birdie();
 class Container
 {
    Birdie stackobj;  // DEFINITELY doesn't need a destructor
-   Birdie * p; 			 // will be cleaned up by default destructor
+   Birdie * p; 			 // if you OWN this pointer (i.e. allocating it), be sure to clean it up in the constructor
    Container()
    {
       p = new Birdie();
