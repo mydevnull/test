@@ -40,6 +40,7 @@ public:
       : m_identifier ( rhs.m_identifier )
       , m_name       ( rhs.m_name )      
     {
+       std::cout << m_name << " :: " << m_identifier << ": entered copy constructor!" << std::endl;
     }
     
     // *** ASSIGNMENT OPERATOR ***
@@ -51,6 +52,7 @@ public:
         {
             m_identifier = rhs.m_identifier;
             m_name       = rhs.m_name;
+            std::cout << m_name << " :: " << m_identifier << ": entered assignment operator!" << std::endl;
         }
     }
     
@@ -77,7 +79,10 @@ int main( int argc, const char * argv[] )
     {
         Birdie b1( 1, "good" );
         Birdie b2( 2, "bad" );
-
+        
+        Birdie b3( b1 );      // copy constructor
+        b3 = b2;              // assignment operator
+        
         b1.sayHoot();
 
         throw std::runtime_error( "oh no!" ); // interrupts the flow - caught by try/catch
