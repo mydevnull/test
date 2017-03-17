@@ -16,6 +16,10 @@ private:
 
 public:
 
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////  CREATORS / DESTRUCTORS ///////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    
     // *** DEFAULT CONSTRUCTOR ***
     Birdie()
       : m_identifier ( 0 )
@@ -65,6 +69,35 @@ public:
     {
         std::cout << m_name << " :: " << m_identifier << ": entered destructor!" << std::endl;
     }
+    
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////       ACCESSORS         ///////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    
+    const int identifer() const
+    {
+        return m_identifier;
+    }
+    
+    const std::string& name() const
+    {
+        return m_name;
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////       MODIFIERS         ///////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    
+    std::string& name()
+    {
+        return m_name;
+    }
+    
+    // notice, we can't have a modifier for our const m_identifier
+    
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////       METHODS           ///////////////////////
+    ////////////////////////////////////////////////////////////////////////////
 
     // a public method
     void sayHoot() const // const at the end of method means method will not modify any member variables
@@ -83,7 +116,13 @@ int main( int argc, const char * argv[] )
         Birdie b3( b1 );      // copy constructor
         b3 = b2;              // assignment operator
         
+        b3.sayHoot();
+        b3.name() = std::string( "new b3 name" );  // using modifier
+        std::cout << "b3: " << b3.identifier() << " :: " << b3.name() << std::endl; // using two accessors
+        b3.sayHoot();
+        
         b1.sayHoot();
+
 
         throw std::runtime_error( "oh no!" ); // interrupts the flow - caught by try/catch
 
