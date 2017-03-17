@@ -53,6 +53,10 @@ public:
             m_name       = rhs.m_name;
         }
     }
+    
+    // *** MOVE CONSTRUCTOR ***
+    // *** MOVE ASSIGNMENT OPERATOR ***
+    /// see: https://msdn.microsoft.com/en-us/library/dd293665.aspx
 
     // destructor
     ~Birdie()
