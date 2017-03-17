@@ -8,7 +8,6 @@ int myfunc( int * out, int input )
    {
       return -1;
    }
-  
 
    *out = 42; 
   
@@ -22,8 +21,8 @@ int f2()
   
   if ( rc != 0 )
   {
-      // handle error
-      // print error
+      std::cout << "myfunc returned an error: error code = " << rc << "!" << std::endl;
+     
       return rc;
   }
 
@@ -32,7 +31,7 @@ int f2()
   return 0;
 }
 
-int f3()
+void f3()
 {
   // do stuff
 
@@ -40,11 +39,10 @@ int f3()
   
   if ( rc != 0 )
   {
-      return rc;
+      std::cout << "f2 returned an error: error code = " << rc << "!" << std::endl;
   }
   
   // do more stuff
-  return 0;
 }
 
 
