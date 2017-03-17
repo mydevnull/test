@@ -54,7 +54,7 @@ int myfunc( int input )
 {
    if ( someErrorCondition() )
    {
-      throw exception();
+      throw std::runtime_error( "someErrorCondition() check failed!" );
    }
 
    return 42;
@@ -67,7 +67,7 @@ void f2()
   useTheValueOf( out );
 }
 
-void f3()
+void f3() noexcept   // indicate to the callers of f3 that it will not throw any exceptions
 {
   try
   {
@@ -75,8 +75,9 @@ void f3()
     f2();
     // do more stuff
   }
-  catch ( const exception& e )
+  catch ( const std::exception& e )
   {
-     std::cout << "exception happened!" << e.what() << std::end;
+     std::cout << "exception happened: " << e.what() << std::end;
+     // will print out "exception happened: someErrorCondition() check failed!"
   }
 }
