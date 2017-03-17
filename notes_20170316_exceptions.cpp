@@ -53,6 +53,7 @@ int myfunc( int input )
    if ( someErrorCondition() )
    {
       throw std::runtime_error( "someErrorCondition() check failed!" );
+      // the function will break-out here and will never return 42 //
    }
 
    return 42;
