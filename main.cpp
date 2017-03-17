@@ -16,7 +16,7 @@ private:
 
 public:
 
-    // defauilt constructor
+    // *** DEFAULT CONSTRUCTOR ***
     Birdie()
       : m_identifier ( 0 )
       , m_name       ()
@@ -24,13 +24,34 @@ public:
         std::cout << m_name << " :: " << m_identifier << ": entered default constructor!" << std::endl;
     }
 
-    
-    // constructor
+    // *** CONSTRUCTOR ***
     Birdie( const int identifier, const std::string& name ) // const arguments will not be modified
       : m_identifier ( identifier )
       , m_name       ( name )
     {
         std::cout << m_name << " :: " << m_identifier << ": entered constructor!" << std::endl;
+    }
+    
+    // **** COPY CONSTRUCTOR ***
+    // Birdie a( 5, "a" );  <- constructor used
+    // Birdie b( a );       <- copy constructor used
+    // Birdie b = a;        <- copy constructor used
+    Birdie( const Birdie& rhs )
+      : m_identifier ( rhs.m_identifier )
+      , m_name       ( rhs.m_name )      
+    {
+    }
+    
+    // *** ASSIGNMENT OPERATOR ***
+    // Birdie b;  <- default constructor used
+    // b = a;     <- assignment operator used
+    Birdie& operator = ( const Birdie& rhs )
+    {
+        if ( this != &rhs )
+        {
+            m_identifier = rhs.m_identifier;
+            m_name       = rhs.m_name;
+        }
     }
 
     // destructor
