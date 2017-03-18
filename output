@@ -1,0 +1,12 @@
+good :: 1: entered constructor!
+bad :: 2: entered constructor!
+good :: 1: entered copy constructor!
+bad :: 2: entered assignment operator!
+I'm a 'bad/2' hoot!
+b3: 2 :: new b3 name
+I'm a 'new b3 name/2' hoot!
+I'm a 'good/1' hoot!
+new b3 name :: 2: entered destructor!
+bad :: 2: entered destructor!
+good :: 1: entered destructor!
+exception in main: oh no!
