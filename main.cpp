@@ -11,8 +11,8 @@ class Birdie
 private:
 
     // member variables
-    const int       m_identifier;
-    std::string     m_name;
+    int           m_identifier;
+    std::string   m_name;
 
 public:
 
@@ -74,7 +74,7 @@ public:
     ////////////////////////////       ACCESSORS         ///////////////////////
     ////////////////////////////////////////////////////////////////////////////
     
-    const int identifer() const
+    const int identifier() const
     {
         return m_identifier;
     }
