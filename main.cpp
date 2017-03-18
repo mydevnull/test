@@ -122,6 +122,8 @@ int main( int argc, const char * argv[] )
         b3.sayHoot();
         
         b1.sayHoot();
+        
+        const Birdie& ref = b1;  // copy constructor ***NOT*** used!
 
 
         throw std::runtime_error( "oh no!" ); // interrupts the flow - caught by try/catch
