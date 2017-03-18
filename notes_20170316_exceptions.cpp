@@ -74,9 +74,17 @@ void f3() noexcept   // indicate to the callers of f3 that it will not throw any
     f2();
     // do more stuff
   }
+  catch ( const std::runtime_error& re )
+  {
+     std::cout << "runtime_error happened: " << re.what() << std::endl;
+  }
   catch ( const std::exception& e )
   {
-     std::cout << "exception happened: " << e.what() << std::end;
+     std::cout << "generic exception happened: " << e.what() << std::endl;
      // will print out "exception happened: someErrorCondition() check failed!"
+  }
+  catch ( ... )
+  {
+     std::cout << "unknown exception happened!" << std::endl;
   }
 }
