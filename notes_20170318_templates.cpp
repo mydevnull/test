@@ -52,9 +52,9 @@ void main()
    func( Test() ); // Test() creates temporary object on stack
   
    int arr[ 50 ];		// stack allocated array
-   int size = doSomethingWithArray( arr );
+   doSomethingWithArray( arr );
   
    
    int * arr2 = new int[ n ];  // points to the first element of the array
-   int size2 = doSomethingWithArray( *arr2 );  // would not compile
+   doSomethingWithArray( *arr2 );  // would not compile
 }
