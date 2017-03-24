@@ -35,7 +35,7 @@ std::vector< int >::iterator intvec.end(); // points to the element after the la
    ^
    it
 // before c++11
-for ( std::vector< int >::const_iterator it  = intvec.begin();
+for ( std::vector< int >::const_iterator it  = intvec.begin();  // notice const_iterator
                                          it != intvec.end();
                                       ++ it )
 {
@@ -47,4 +47,16 @@ for ( size_t ii = 0; ii < intvec.size(); ii++ )
 {
    int val = intvec[ ii ];
    std::cout << val;
+}
+
+// C++11
+for ( int val : intvec )  // equivalent to const_iterator
+{
+   std::cout << val;
+}
+
+// int& is a reference type
+for ( int& val : intvec ) // equivalent to std::vector< int >::iterator
+{
+   val = val * 2;         // multiply every value by 2
 }
