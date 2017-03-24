@@ -9,12 +9,13 @@ ASSOSIATIVE CONTAINER
 
 c++ hashtable
 
+// optional! don't usually need it
   struct myhashfunction{
-  		int operator()
+      int hash( const std::string& key )
       {
       }
    };
-  
+
 std::unordered_map< std::string, Birdie, myhashfuncion > str_to_birdie_map;
 
 /* www.cplusplus.com/reference/utility/pair/
@@ -41,8 +42,8 @@ str_to_birdie_map.insert( std::make_pair( "b2", b2 ) );
 // before c++11
 typedef std::unordered_map< std::string, Birdie, myhashfuncion > BirdieMap;
 for ( BirdieMap::const_iterator pair_it  = str_to_birdie_map.begin();
-     														pair_it != .end();
-     											   ++ pair_it )
+                                pair_it != .end();
+                             ++ pair_it )
 {
    const std::string& key = pair_it->first;	// why not std::string key = it->first;
    const Birdie& value = pair_it->second;    // so that we *don't* make a copy of the object!
