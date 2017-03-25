@@ -42,7 +42,7 @@ str_to_birdie_map.insert( std::make_pair( "b2", b2 ) );
 // before c++11
 typedef std::unordered_map< std::string, Birdie, myhashfuncion > BirdieMap;
 for ( BirdieMap::const_iterator pair_it  = str_to_birdie_map.begin();
-                                pair_it != .end();
+                                pair_it != str_to_birdie_map.end();
                              ++ pair_it )
 {
    const std::string& key = pair_it->first;	// why not std::string key = it->first;
